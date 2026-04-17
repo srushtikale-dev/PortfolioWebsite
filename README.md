@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# Srushti Kale Portfolio
 
-TODO: Document your project here
+Personal portfolio website built with React, TypeScript, Vite, and Tailwind CSS.
