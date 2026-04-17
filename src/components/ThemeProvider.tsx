@@ -9,13 +9,14 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window === "undefined") return "light";
     const saved = localStorage.getItem("theme") as Theme | null;
-    if (saved) return saved;
+    if (saved === "light" || saved === "dark") return saved;
     return "light";
   });
 
   useEffect(() => {
     const root = document.documentElement;
     root.classList.toggle("dark", theme === "dark");
+    root.style.colorScheme = theme;
     localStorage.setItem("theme", theme);
   }, [theme]);
 
