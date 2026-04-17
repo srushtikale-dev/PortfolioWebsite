@@ -8,6 +8,9 @@ const FloatingContact = () => {
   )}`;
   const telUrl = `tel:${profile.phone}`;
 
+  const baseBtn =
+    "group relative flex h-12 w-12 items-center justify-center rounded-full bg-background/70 text-foreground backdrop-blur-xl border border-primary/20 shadow-soft transition-all hover:border-primary/50 hover:text-primary hover:shadow-glow";
+
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
       <motion.a
@@ -18,13 +21,12 @@ const FloatingContact = () => {
         initial={{ opacity: 0, scale: 0, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ delay: 1.2, type: "spring", stiffness: 200 }}
-        whileHover={{ scale: 1.1, rotate: -5 }}
+        whileHover={{ scale: 1.08, y: -2 }}
         whileTap={{ scale: 0.95 }}
-        className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-white shadow-float"
+        className={baseBtn}
       >
-        <span className="absolute inset-0 animate-ping rounded-full bg-whatsapp opacity-30" />
-        <MessageCircle className="relative h-6 w-6" fill="currentColor" />
-        <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-full bg-foreground px-3 py-1.5 text-xs font-medium text-background opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100">
+        <MessageCircle className="h-5 w-5" />
+        <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-full glass px-3 py-1.5 text-xs font-medium text-foreground opacity-0 shadow-soft transition-opacity duration-200 group-hover:opacity-100">
           WhatsApp
         </span>
       </motion.a>
@@ -35,13 +37,12 @@ const FloatingContact = () => {
         initial={{ opacity: 0, scale: 0, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ delay: 1.4, type: "spring", stiffness: 200 }}
-        whileHover={{ scale: 1.1, rotate: 5 }}
+        whileHover={{ scale: 1.08, y: -2 }}
         whileTap={{ scale: 0.95 }}
-        className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-call text-white shadow-float"
+        className={baseBtn}
       >
-        <span className="absolute inset-0 animate-ping rounded-full bg-call opacity-30" />
-        <Phone className="relative h-6 w-6" fill="currentColor" />
-        <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-full bg-foreground px-3 py-1.5 text-xs font-medium text-background opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100">
+        <Phone className="h-5 w-5" />
+        <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-full glass px-3 py-1.5 text-xs font-medium text-foreground opacity-0 shadow-soft transition-opacity duration-200 group-hover:opacity-100">
           Call Now
         </span>
       </motion.a>
