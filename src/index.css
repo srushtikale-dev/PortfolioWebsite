@@ -105,10 +105,14 @@
   .shadow-soft { box-shadow: var(--shadow-soft); }
   .shadow-float { box-shadow: var(--shadow-float); }
   .glass {
-    background: hsl(0 0% 100% / 0.6);
+    background: hsl(var(--card) / 0.6);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid hsl(270 50% 90% / 0.5);
+    border: 1px solid hsl(var(--border) / 0.6);
+  }
+  .dark .glass {
+    background: hsl(var(--card) / 0.5);
+    border: 1px solid hsl(var(--border) / 0.6);
   }
 }
 
